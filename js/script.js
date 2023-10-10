@@ -7,9 +7,31 @@
 // - va applicato uno sconto del 20% per i minorenni
 // - va applicato uno sconto del 40% per gli over 65.
 
-const nameSurname = document.getElementById('namesurname').value;
-const distance = document.getElementById('distance').value;
-const age = document.getElementById('age').value;
+
 const generateButton = document.querySelector('.btn-success');
 const resetButton = document.querySelector('.btn-danger');
 
+generateButton.addEventListener('click', function(){
+    const nameSurname = document.getElementById('namesurname').value;
+    const distance = document.getElementById('distance').value;
+    const age = document.getElementById('age').value;
+    const basePrice = (0.21 * distance);
+    let finalPrice;
+    
+    console.log(nameSurname);
+    console.log(distance);
+    console.log(age);
+
+    if (age === 'select' || nameSurname === ''){
+        alert('devi inserire dei valori!')
+    } else {
+        if(age === 'minor'){
+            finalPrice = (basePrice - (basePrice * 20 / 100)).toFixed(2);
+        } else if (age === 'over65'){
+            finalPrice = (basePrice - (basePrice * 40 / 100)).toFixed(2);
+        } else {
+            finalPrice = basePrice.toFixed(2);
+        }
+    }
+        
+})
