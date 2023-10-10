@@ -21,6 +21,9 @@ generateButton.addEventListener('click', function(){
 
     if (age === 'select' || nameSurname === '' || isNaN(distance)){
         alert('devi inserire dei valori corretti!');
+        document.getElementById('namesurname').value = '';
+        document.getElementById('distance').value = '';
+        document.getElementById('age').value = 'select';
     } else {
         if(age === 'minor'){
             finalPrice = (basePrice - (basePrice * 20 / 100)).toFixed(2);
