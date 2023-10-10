@@ -20,7 +20,7 @@ generateButton.addEventListener('click', function(){
     let finalPrice;
 
     if (age === 'select' || nameSurname === '' || isNaN(distance)){
-        alert('devi inserire dei valori corretti!')
+        alert('devi inserire dei valori corretti!');
     } else {
         if(age === 'minor'){
             finalPrice = (basePrice - (basePrice * 20 / 100)).toFixed(2);
@@ -44,4 +44,10 @@ generateButton.addEventListener('click', function(){
     document.querySelector('.carriage').innerHTML = (Math.floor(Math.random() * 10) + 1);
     document.querySelector('.cp').innerHTML = (Math.floor(Math.random() * 10000) + 1);
          
+})
+
+resetButton.addEventListener('click', function(){
+    document.getElementById('namesurname').value = '';
+    document.getElementById('distance').value = '';
+    document.getElementById('age').value = 'select';
 })
