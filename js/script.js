@@ -47,7 +47,12 @@ generateButton.addEventListener('click', function(){
 })
 
 resetButton.addEventListener('click', function(){
+    const ticket = document.getElementById('ticket');
+
     document.getElementById('namesurname').value = '';
     document.getElementById('distance').value = '';
     document.getElementById('age').value = 'select';
+
+    ticket.classList.add("d-none");
+    
 })
